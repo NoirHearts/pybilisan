@@ -6,6 +6,8 @@ This application aims to cater to young audiences by serving as an educational g
   
 The game uses Python3 as programming language with Pyglet as its framework.  
 
+<img src="https://i.imgur.com/PW60nw6.png" alt="app" width="300"/> <img src="https://i.imgur.com/6WxcAD1.png" alt="app" width="300"/>
+
 =========
 
 Group 14 folder contents  
