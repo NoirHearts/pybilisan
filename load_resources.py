@@ -54,7 +54,7 @@ umalis_btn_pressed = resource.image("umalis_btn_pressed.png")
 OK_btn_pressed = resource.image("OK_btn_pressed.png")
 
 #PAANO MAGLARO ITEMS
-directions = pyglet.image.load_animation("res\direction.gif")
+directions = pyglet.image.load_animation("res/direction.gif")
 
 #BAGUHIN ANG LARO ITEMS
 

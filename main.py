@@ -12,7 +12,8 @@ from pyglet import font
 from pyglet import media
 from pyglet.font import ttf
 from pyglet.sprite import Sprite
-
+from OpenGL.GL import *
+# from OpenGL.GLU import *
 import text_input
 import load_resources
 
@@ -173,7 +174,7 @@ class Menu(Overlay):
 
 # Menu items (non-toggle)
 class MenuItem(object):
-	pointer_color = (1, 1, 1)
+	pointer_color = (1.0, 1.0, 1.0)
 	inverted_pointers = False
 
 	def __init__(self, img, y, activate_func):
@@ -187,15 +188,15 @@ class MenuItem(object):
 	def draw_pointer(self, x, y, color, flip=False):
 		# color the pointer image to a color
 
-		glPushAttrib(GL_CURRENT_BIT)
-		glColor3f(*color)
+		# glPushAttrib(GL_CURRENT_BIT)
+		# glColor3f(*color)
 
 		if flip:
 			load_resources.pointer_image_flip.blit(x, y)
 		else:
 			load_resources.pointer_image.blit(x, y)
 
-		glPopAttrib()
+		# glPopAttrib()
 
 	def draw(self, selected):
 		self.text.draw()
@@ -255,7 +256,7 @@ class MenuItem(object):
 
 # "Baguhin ang Laro" menu item (toggling menu item)
 class ChangeDifficultyLevel(MenuItem):
-	pointer_color = (1, 1, 1)
+	pointer_color = (1.0, 1.0, 1.0)
 	inverted_pointers = True
 
 	def __init__(self, y):
@@ -283,7 +284,7 @@ class ChangeDifficultyLevel(MenuItem):
 
 # "Baguhin ang Laro" menu item (toggling menu item)
 class ChangeSound(MenuItem):
-	pointer_color = (1, 1, 1)
+	pointer_color = (1.0, 1.0, 1.0)
 	inverted_pointers = True
 
 	def __init__(self, y):
@@ -314,7 +315,7 @@ class ChangeSound(MenuItem):
 
 # "Baguhin ang Laro" menu item (toggling menu Item)
 class ChangeFPS(MenuItem):
-	pointer_color = (1, 1, 1)
+	pointer_color = (1.0, 1.0, 1.0)
 	inverted_pointers = True
 
 	def __init__(self, y):
@@ -545,7 +546,7 @@ class CharacterSelect(Menu):
 
 # "Pumili ng Hayop" menu item (toggling menu Item)
 class ChangeCharacters(MenuItem):
-	pointer_color = (1, 1, 1)
+	pointer_color = (1.0, 1.0, 1.0)
 	inverted_pointers = True
 
 	def __init__(self, y):
@@ -1167,15 +1168,15 @@ def on_draw():
 
 	win.draw()
 
-	glColor3f(1, 1, 1)
+	# glColor3f(1.0, 1.0, 1.0)
 
 	# top, left, center, right, bottom
 	for (x, y) in ((0, WINDOW_HEIGHT), (-WINDOW_WIDTH, 0), (0, 0), (WINDOW_WIDTH, 0), (0, -WINDOW_HEIGHT)):
-		glLoadIdentity()
-		glTranslatef(x, y, 0)
+		# glLoadIdentity()
+		# glTranslatef(x, y, 0)
 		load_resources.wrapping_batch.draw()
 
-	glLoadIdentity()	
+	# glLoadIdentity()	
 	load_resources.batch.draw()
 
 	if overlay:
@@ -1277,8 +1278,8 @@ def newSched(dt):
 # START GAME
 #-----------------------------------------------------------
 
-glEnable(GL_BLEND)
-glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
+# glEnable(GL_BLEND)
+# glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
 
 pyglet.clock.schedule_interval(update, 1/60)
 
