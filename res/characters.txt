@@ -1,0 +1,14 @@
+01 chick/ sisiw
+02 rodent/ daga
+03 frog/ palaka
+04 monkey/ unggoy
+05 cow/ baka
+06 cat/ pusa
+07 dog/ aso
+08 deer/ uso
+09 wolf/ lobo
+10 bear/ oso
+11 koala/ koala
+12 panda/ panda
+13 tiger/ tigre
+14 lion/ leon
